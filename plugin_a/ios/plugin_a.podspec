@@ -17,7 +17,11 @@ A new Flutter plugin project.
   s.dependency 'Flutter'
   s.platform = :ios, '12.0'
 
-  s.preserve_paths = '../../plugin_b/ios/Frameworks/B.framework'
+#   s.preserve_paths = '../../plugin_b/ios/Frameworks/B.framework'
+#   s.vendored_frameworks = 'B.framework'
+
+  s.preserve_paths = 'B.framework/**/*'
+  s.xcconfig = { 'OTHER_LDFLAGS' => '-framework B' }
   s.vendored_frameworks = 'B.framework'
 
   # Flutter.framework does not contain a i386 slice.
